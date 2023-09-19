@@ -4,7 +4,10 @@ services:
   mongo:
     volumes:
       - ./data:/data/db
-  
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    environment:
+      MONGO_INITDB_DATABASE: currency
+
   app:
     container_name: ts-node-app-dev
     command: yarn dev -L
