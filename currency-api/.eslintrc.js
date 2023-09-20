@@ -1,4 +1,4 @@
-{
+module.exports = {
   "env": {
     "node": true,
     "jest": true
@@ -6,7 +6,10 @@
   "extends": ["airbnb-base", "plugin:jest/recommended", "plugin:security/recommended", "plugin:prettier/recommended"],
   "plugins": ["jest", "security", "prettier"],
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2018,
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
+    sourceType: 'module'
   },
   "rules": {
     "no-console": "error",
