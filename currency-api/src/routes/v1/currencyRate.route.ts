@@ -44,20 +44,25 @@ export default router;
  *               - baseCurrency
  *               - targetCurrency
  *               - exchangeRate
+ *               - currencyTime
  *             properties:
  *               baseCurrency:
  *                 type: string
  *                 description: The base currency code (e.g., USD)
  *               targetCurrency:
  *                 type: string
- *                 description: The target currency code (e.g., EUR)
+ *                 description: The target currency code (e.g., BRL)
  *               exchangeRate:
  *                 type: number
  *                 description: The exchange rate value
+ *               currencyTime:
+ *                 type: date
+ *                 description: The currency time
  *             example:
  *               baseCurrency: USD
  *               targetCurrency: EUR
  *               exchangeRate: 1.2
+ *               currencyTime: 2023-01-01
  *     responses:
  *       "201":
  *         description: Created

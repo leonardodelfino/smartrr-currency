@@ -12,8 +12,12 @@ export const createCurrencyRateSchema = {
 };
 
 export const getCurrencyRatesSchema = {
-  query: Joi.object({
-    // Define your validation rules for query parameters here.
+  query: Joi.object().keys({
+    baseCurrency: Joi.string(),
+    targetCurrency: Joi.string(),
+    sortBy: Joi.string(),
+    limit: Joi.number().integer(),
+    page: Joi.number().integer(),
   }),
 };
 

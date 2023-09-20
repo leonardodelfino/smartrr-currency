@@ -5,6 +5,8 @@ import catchAsync from '../utils/catchAsync';
 import ApiError from '../errors/ApiError';
 import {  UpdateCurrencyRateBody, ICurrencyRate } from './currencyRate.interfaces';
 import * as currencyRateService from './currencyRate.service';
+import pick from '../utils/pick';
+import { IOptions } from '../paginate/paginate';
 
 export const createCurrencyRate = catchAsync(async (req: Request, res: Response) => {
   const currencyRate: ICurrencyRate = await currencyRateService.createCurrencyRate(req.body);
@@ -12,8 +14,9 @@ export const createCurrencyRate = catchAsync(async (req: Request, res: Response)
 });
 
 export const getCurrencyRates = catchAsync(async (req: Request, res: Response) => {
-  const filter = req.query; // You may want to validate and sanitize the query parameters here.
-  const options = req.query; // You may want to validate and sanitize the query parameters here.
+  const filter = pick(req.query, ['baseCurrency', 'targetCurrency']);
+  const options: IOptions = pick(req.query, ['sortBy', 'limit', 'page']);
+  console.log(filter, options)
   const result = await currencyRateService.queryCurrencyRates(filter, options);
   res.json(result);
 });
