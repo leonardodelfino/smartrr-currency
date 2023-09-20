@@ -10,7 +10,7 @@ services:
     networks:
       - backend
   app:
-    container_name: currency-app
+    container_name: currency-api
     build:
       context: .
       dockerfile: Dockerfile

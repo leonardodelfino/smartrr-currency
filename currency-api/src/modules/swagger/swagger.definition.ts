@@ -2,6 +2,18 @@ import config from '../../config/config';
 
 const swaggerDefinition = {
   openapi: '3.0.0',
+  components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT'
+      }
+    }
+  },
+  security: {
+    bearerAuth: []
+  },
   info: {
     title: 'node-express-typescript-boilerplate API documentation',
     version: '0.0.1',
