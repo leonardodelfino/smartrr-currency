@@ -11,12 +11,12 @@ This project is a set of applications utilizing Node.js, TypeScript, and React, 
 - Docker Compose
 
 ## Architecture Overview
-![Alt text](docs/architeture-diagram.jpeg)
 
 ### Architecture Diagram
 
 Below is a high-level diagram representing the architecture of the Currency Converter Application:
 
+![Alt text](docs/architeture-diagram.jpeg )
 
 
 
