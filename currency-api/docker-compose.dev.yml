@@ -8,14 +8,20 @@ services:
     environment:
       MONGO_INITDB_DATABASE: currency
 
-  app:
-    container_name: currency-api-dev
+  currency-api:
+    container_name: currency-api-dev2
     command: yarn dev -L
     volumes:
       - ./:/usr/src/app
       - ignore:/usr/local/apps/myapp/dev/node_modules/
+    networks:
+      - backend
 
 volumes:
   mongo-data:
     driver: local
   ignore:
+
+networks:
+  backend:
+    external: true

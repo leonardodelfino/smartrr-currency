@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  currency-scheduler:
+    container_name: currency-scheduler-dev2
+    command: yarn dev -L
+    networks:
+      - backend
+    volumes:
+      - ./:/usr/src/app
+      - ignore:/usr/local/apps/myapp/dev/node_modules/
+
+volumes:
+  ignore:
+
+networks:
+  backend:
+    external: true

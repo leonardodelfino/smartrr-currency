@@ -9,7 +9,7 @@ services:
       - "27018:27017"
     networks:
       - backend
-  app:
+  currency-api:
     container_name: currency-api
     build:
       context: .
