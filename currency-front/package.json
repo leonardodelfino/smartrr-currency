@@ -3,14 +3,18 @@
   "version": "5.0.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/material": "latest",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.10",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "axios": "^1.5.0",
+    "path": "^0.12.7",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest",
+    "recharts": "^2.8.0",
     "typescript": "latest"
   },
   "scripts": {
