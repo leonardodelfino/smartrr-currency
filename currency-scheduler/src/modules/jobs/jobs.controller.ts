@@ -6,6 +6,7 @@ const processResponseFromCurrencyApi = (response: CurrencyConverterApiResponse) 
   if (response.status === 'success') {
       const currenRateParams: CurrencyRateApiParams | undefined = convertApiResponseToRateParams(response)
       if(currenRateParams) {
+        logger.debug("Inserting currency rates", currenRateParams);
         jobsService.insertRateCurrencyApi(currenRateParams).catch((error) => {
           logger.error('Error insreting rates to API:', error);
         });

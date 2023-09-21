@@ -2,6 +2,7 @@
 import { AxiosResponse } from 'axios';
 import { CurrencyConverterApiResponse, CurrencyRateApiParams } from './jobs.interfaces';
 import { currencyApi, currencyConverterApi } from '../../config/axios-services'
+import logger from '../logger/logger';
 
 export const fetchRatesFromApi = async (baseCurrencyCode: string, targetCurrencyCode: string): Promise<CurrencyConverterApiResponse> => {
   try {
@@ -13,6 +14,7 @@ export const fetchRatesFromApi = async (baseCurrencyCode: string, targetCurrency
       amount: '1'
     }
 
+    logger.info("Fetching currency rates");
     const response: AxiosResponse<CurrencyConverterApiResponse> = await currencyConverterApi.get("/currency/convert", { params })
 
     return response.data;
