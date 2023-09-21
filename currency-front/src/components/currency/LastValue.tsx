@@ -5,6 +5,9 @@ import Title from './Title';
 import { currencyApi } from '../../config/axios-services'
 import { AxiosRequestConfig } from 'axios';
 
+function formatCurrencyTime(currencyTime: Date) {
+  return new Date(currencyTime).toLocaleString('en-US');
+}
 
 export default function LastValue() {
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
@@ -24,7 +27,7 @@ export default function LastValue() {
         if(response.data.totalResults > 0) {
           const { exchangeRate, currencyTime } = response.data.results[0];
           setExchangeRate(exchangeRate);
-          setLastUpdated(currencyTime);
+          setLastUpdated(formatCurrencyTime(currencyTime)); // Format currencyTime
         }
       })
       .catch((error) => {
