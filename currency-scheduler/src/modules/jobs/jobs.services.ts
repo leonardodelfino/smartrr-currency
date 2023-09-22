@@ -1,4 +1,3 @@
-// externalApiService.ts
 import { AxiosResponse } from 'axios';
 import { CurrencyConverterApiResponse, CurrencyRateApiParams } from './jobs.interfaces';
 import { currencyApi, currencyConverterApi } from '../../config/axios-services';

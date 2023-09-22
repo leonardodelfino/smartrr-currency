@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    container_name: currency-scheduler-test
+    command: npm run coverage
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./:/usr/src/currency-scheduler
+
+

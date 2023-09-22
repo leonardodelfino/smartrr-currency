@@ -36,7 +36,7 @@ Here's how the project is deployed:
     ```bash
     docker-compose up
     ```
-### How to Run Tests
+### Run Tests
 To run tests for the `currency-api` use the following command:
 ```bash
 docker-compose -f ./currency-api/docker-compose-test.yml up

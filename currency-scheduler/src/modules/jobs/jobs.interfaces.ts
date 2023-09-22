@@ -1,4 +1,3 @@
-// interfaces.ts
 interface CurrencyConverterApiResponse {
   base_currency_code: string;
   base_currency_name: string;
