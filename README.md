@@ -6,6 +6,18 @@ This project is a set of applications utilizing Node.js, TypeScript, and React, 
 
 This project serves as the resolution for the [Senior Engineer Homework Challenge](https://github.com/smartrr-hello/senior_engineer_homework), showcasing the author's expertise in building a robust and scalable currency conversion solution.
 
+## Demo and Deployment
+
+Explore a live demo of the Currency Converter Application by visiting [this link](https://currency-front-7b2cb0f6ab6e.herokuapp.com/).
+
+Here's how the project is deployed:
+
+- **currency-front**, **currency-api**, and **currency-scheduler** have been deployed to Heroku.
+- The MongoDB database is hosted on MongoDB Atlas.
+
+- **currency-front**, **currency-api**, and **currency-scheduler** have been deployed to Heroku.
+- The MongoDB database is hosted on MongoDB Atlas.
+
 ## Architecture Overview
 
 ### Architecture Diagram
