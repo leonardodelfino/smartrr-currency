@@ -4,7 +4,6 @@ import catchAsync from '../utils/catchAsync';
 import { tokenService } from '../token';
 import { userService } from '../user';
 import * as authService from './auth.service';
-import { emailService } from '../email';
 
 export const register = catchAsync(async (req: Request, res: Response) => {
   const user = await userService.registerUser(req.body);
@@ -29,20 +28,8 @@ export const refreshTokens = catchAsync(async (req: Request, res: Response) => {
   res.send({ ...userWithTokens });
 });
 
-export const forgotPassword = catchAsync(async (req: Request, res: Response) => {
-  const resetPasswordToken = await tokenService.generateResetPasswordToken(req.body.email);
-  await emailService.sendResetPasswordEmail(req.body.email, resetPasswordToken);
-  res.status(httpStatus.NO_CONTENT).send();
-});
-
 export const resetPassword = catchAsync(async (req: Request, res: Response) => {
   await authService.resetPassword(req.query['token'], req.body.password);
-  res.status(httpStatus.NO_CONTENT).send();
-});
-
-export const sendVerificationEmail = catchAsync(async (req: Request, res: Response) => {
-  const verifyEmailToken = await tokenService.generateVerifyEmailToken(req.user);
-  await emailService.sendVerificationEmail(req.user.email, verifyEmailToken, req.user.name);
   res.status(httpStatus.NO_CONTENT).send();
 });
 

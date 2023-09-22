@@ -9,7 +9,7 @@ services:
       MONGO_INITDB_DATABASE: currency
 
   currency-api:
-    container_name: currency-api-dev2
+    container_name: currency-api-development
     command: yarn dev -L
     volumes:
       - ./:/usr/src/app
