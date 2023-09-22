@@ -4,7 +4,7 @@ module.exports = {
     NODE_ENV: 'test',
   },
   restoreMocks: true,
-  coveragePathIgnorePatterns: ['node_modules', 'dist/config', 'dist/app.js'],
+  coveragePathIgnorePatterns: ['node_modules', 'dist'],
   coverageReporters: ['text', 'lcov', 'clover', 'html'],
   globals: {
     'ts-jest': {

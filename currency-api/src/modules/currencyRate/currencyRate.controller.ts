@@ -16,18 +16,12 @@ export const createCurrencyRate = catchAsync(async (req: Request, res: Response)
 export const getCurrencyRates = catchAsync(async (req: Request, res: Response) => {
   const filter = pick(req.query, ['baseCurrency', 'targetCurrency']);
   const options: IOptions = pick(req.query, ['sortBy', 'limit', 'page']);
-  console.log(filter, options)
   const result = await currencyRateService.queryCurrencyRates(filter, options);
   res.json(result);
 });
 
 export const getCurrencyRateById = catchAsync(async (req: Request, res: Response) => {
   const currencyRateId: string = req.params['currencyRateId'] as string;
-
-  if (!mongoose.Types.ObjectId.isValid(currencyRateId)) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid currency rate ID');
-  }
-
   const currencyRate: ICurrencyRate | null = await currencyRateService.getCurrencyRateById(
     new mongoose.Types.ObjectId(currencyRateId)
   );
@@ -41,29 +35,16 @@ export const getCurrencyRateById = catchAsync(async (req: Request, res: Response
 
 export const updateCurrencyRateById = catchAsync(async (req: Request, res: Response) => {
   const currencyRateId: string = req.params['currencyRateId'] as string;
-  if (!mongoose.Types.ObjectId.isValid(currencyRateId)) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid currency rate ID');
-  }
-
   const updateBody: UpdateCurrencyRateBody = req.body;
   const currencyRate: ICurrencyRate | null = await currencyRateService.updateCurrencyRateById(
     new mongoose.Types.ObjectId(currencyRateId),
     updateBody
   );
-
-  if (!currencyRate) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Currency rate not found');
-  }
-
   res.json(currencyRate);
 });
 
 export const deleteCurrencyRateById = catchAsync(async (req: Request, res: Response) => {
   const currencyRateId: string = req.params['currencyRateId'] as string;
-  if (!mongoose.Types.ObjectId.isValid(currencyRateId)) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid currency rate ID');
-  }
-
   await currencyRateService.deleteCurrencyRateById(new mongoose.Types.ObjectId(currencyRateId));
   res.status(httpStatus.NO_CONTENT).send();
 });

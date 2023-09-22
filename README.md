@@ -36,7 +36,21 @@ Here's how the project is deployed:
     ```bash
     docker-compose up
     ```
+### How to Run Tests
+To run tests for the `currency-api` use the following command:
+```bash
+docker-compose -f ./currency-api/docker-compose-test.yml up
+```
 
+To run tests for the `currency-scheduler` use the following command:
+```bash
+docker-compose -f ./currency-scheduler/docker-compose-test.yml up
+```
+
+To run tests for the `currency-front` use the following command:
+```
+npm test --prefix currency-front/
+```
 
 ## Architecture Overview
 
