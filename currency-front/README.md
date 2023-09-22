@@ -1,40 +1,42 @@
-# Material UI - Create React App example in TypeScript
+# Currency Front
 
-## How to use
+## Getting Started
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+### Prerequisites
 
-<!-- #default-branch-switch -->
+Before running the Currency Frontend, ensure you have the following prerequisites installed:
 
-```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/material-ui-cra-ts
-cd material-ui-cra-ts
-```
+- Node.js
+- npm (Node Package Manager)
 
-Install it and run:
+### Installation
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Create an environment file:
+```bash
+cp ./src/config/env.example.ts ./src/config/env.ts
+```
+
+###Running the Application
+Start the application:
+```bash
 npm start
 ```
 
-or:
+That's it! You can now access the Currency Frontend in your web browser.
 
-<!-- #default-branch-switch -->
+### TODO
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/material-ui-cra-ts)
+- [ ] Review the currently included modules and remove any that are not essential for the project to reduce complexity.
+- [ ] Resolve issues that are preventing the successful utilization of Axios request mocking in test scenarios.
+- [ ] Implement an authentication mechanism to securely save and manage tokens, preventing the need to generate a new one for each request.
+- [ ] Develop a token refresh method to maintain user sessions and ensure seamless access to protected resources.
+- [ ] Find and implement a more robust and efficient method for managing environment variables to enhance security and configuration management.
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-cra-ts)
-
-## The idea behind the example
-
-This example demonstrates how you can use Material UI with [Create React App](https://github.com/facebookincubator/create-react-app) in [TypeScript](https://github.com/Microsoft/TypeScript).
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
-If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+###License
+This project is licensed under the MIT License.
