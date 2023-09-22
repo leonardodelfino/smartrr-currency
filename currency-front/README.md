@@ -36,5 +36,4 @@ That's it! You can now access the Currency Frontend in your web browser.
 - [ ] Resolve issues that are preventing the successful utilization of Axios request mocking in test scenarios.
 - [ ] Implement an authentication mechanism to securely save and manage tokens, preventing the need to generate a new one for each request.
 - [ ] Develop a token refresh method to maintain user sessions and ensure seamless access to protected resources.
-- [ ] Find and implement a more robust and efficient method for managing environment variables to enhance security and configuration management.
 

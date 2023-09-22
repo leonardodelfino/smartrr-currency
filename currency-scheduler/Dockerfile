@@ -1,11 +1,11 @@
 # development stage
 FROM node:14-alpine as base
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/currency-scheduler
 
 COPY package.json yarn.lock tsconfig.json ecosystem.config.json ./
 
-COPY ./src ./src
+COPY ./src ./src/currency-scheduler
 
 RUN ls -a
 

@@ -3,16 +3,16 @@ import logger from '../modules/logger/logger';
 import config from '../config/config';
 
 const currencyConverterApi = axios.create({
-  baseURL: config.rapidApiBaseUrl,
+  baseURL: config.rapidApiBaseUrl || '',
   headers: {
-    'X-RapidAPI-Key': config.rapidApiKey,
-    'X-RapidAPI-Host': config.rapidApiHost,
+    'X-RapidAPI-Key': config.rapidApiKey || '',
+    'X-RapidAPI-Host': config.rapidApiHost || '',
     'Content-Type': 'application/json',
   },
 });
 
 const currencyApi = axios.create({
-  baseURL: config.currencyApiBaseUrl,
+  baseURL: config.currencyApiBaseUrl || '',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -23,13 +23,13 @@ const fetchCurrencyApiAuthToken = async () => {
   return axios.post(`${config.currencyApiBaseUrl}/auth/login`, paramsAuthenticate, {
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
   }).then((response) => {
     return response.data.tokens.access.token;
   }).catch((error) => {
     logger.error('Failed to fetch CurrencyApi JWT token', error);
-    return error
-  })
+    return error;
+  });
 };
 
 currencyApi.interceptors.request.use(
@@ -38,7 +38,7 @@ currencyApi.interceptors.request.use(
     config.headers = {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     };
     return config;
   },
@@ -46,7 +46,6 @@ currencyApi.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-
 
 export {
   currencyConverterApi,
