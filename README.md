@@ -15,8 +15,7 @@ Here's how the project is deployed:
 - **currency-front**, **currency-api**, and **currency-scheduler** have been deployed to Heroku.
 - The MongoDB database is hosted on MongoDB Atlas.
 
-- **currency-front**, **currency-api**, and **currency-scheduler** have been deployed to Heroku.
-- The MongoDB database is hosted on MongoDB Atlas.
+**Please note that due to cost considerations, the demo will be available until September 30th, 2023.**
 
 ## Architecture Overview
 
