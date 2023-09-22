@@ -10,10 +10,11 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "axios": "^1.5.0",
+    "jest": "^27.5.1",
     "path": "^0.12.7",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest",
+    "react-scripts": "^5.0.1",
     "recharts": "^2.8.0",
     "typescript": "latest"
   },
@@ -34,5 +35,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.5",
+    "axios-mock-adapter": "^1.22.0"
   }
 }

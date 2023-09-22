@@ -1,5 +1,5 @@
 import axios, { AxiosRequestHeaders } from 'axios'; // Import Axios and AxiosRequestConfig
-import config from './envs'
+import config from '../config/env'
 
 
 const currencyApi = axios.create({

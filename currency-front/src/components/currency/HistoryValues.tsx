@@ -44,11 +44,13 @@ export default function History() {
         };
 
         const response = await currencyApi.get('/currency-rates', params);
-        const { page, totalResults, results } = response.data;
-
-        setPage(page - 1);
-        setCount(totalResults);
-        setTableData(results);
+        
+        if(response && response.data) {
+          const { page, totalResults, results } = response.data;
+          setPage(page - 1);
+          setCount(totalResults);
+          setTableData(results);
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
       }

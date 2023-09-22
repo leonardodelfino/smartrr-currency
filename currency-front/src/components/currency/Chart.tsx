@@ -49,6 +49,9 @@ export default function Chart() {
         };
 
         const response = await currencyApi.get('/currency-rates', { params });
+        if(!response) {
+          return null
+        }
         const results: CurrencyRate[] = response.data.results;
         const chartData = createData(results);
 
