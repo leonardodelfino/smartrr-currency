@@ -45,6 +45,3 @@ npm run docker:test
 - [ ] Implement token caching for the Currency API to avoid generating a new token for each request.
 - [ ] Review the currently included modules and remove any that are not essential for the project to reduce complexity.
 
-
-#### License
-This project is licensed under the MIT License.

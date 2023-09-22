@@ -50,6 +50,3 @@ You can access the Swagger documentation for this API by visiting the following 
 
 - [ ] Review the currently included modules and remove any that are not essential for the project to reduce complexity.
 - [ ] Investigate and resolve issues related to Swagger schema references to ensure accurate and consistent API documentation.
-
-#### License
-This project is licensed under the MIT License.

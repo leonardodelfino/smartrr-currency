@@ -38,5 +38,3 @@ That's it! You can now access the Currency Frontend in your web browser.
 - [ ] Develop a token refresh method to maintain user sessions and ensure seamless access to protected resources.
 - [ ] Find and implement a more robust and efficient method for managing environment variables to enhance security and configuration management.
 
-###License
-This project is licensed under the MIT License.
