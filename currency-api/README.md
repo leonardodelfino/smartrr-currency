@@ -32,7 +32,7 @@ Run application  container in development mode:
 
 ```bash
 npm run docker:dev
-``````
+```
 
 Run application tests:
 
