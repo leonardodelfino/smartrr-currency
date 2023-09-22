@@ -69,6 +69,14 @@ You might wonder why this project is structured into three distinct services: `c
 
 4. **Simplified Development**: Developers can focus on a single service, making it easier to manage and understand the codebase. This separation of concerns simplifies development and encourages clean code practices.
 
+## TODO
+- [ ] Implement token caching for the Currency API to avoid generating a new token for each request.
+- [ ] Review the currently included modules and remove any that are not essential for the project to reduce complexity.
+- [ ] Resolve issues that are preventing the successful utilization of Axios request mocking in test scenarios of currency-front.
+- [ ] Implement an authentication mechanism to securely save and manage tokens, preventing the need to generate a new one for each request.
+- [ ] Develop a token refresh method to maintain user sessions and ensure seamless access to protected resources.
+- [ ] Investigate and resolve issues related to Swagger schema references to ensure accurate and consistent API documentation.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
