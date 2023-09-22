@@ -11,18 +11,18 @@ Before running the Currency Frontend, ensure you have the following prerequisite
 
 ### Installation
 
-Install dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-Create an environment file:
+2. Create an environment file:
 ```bash
 cp ./src/config/env.example.ts ./src/config/env.ts
 ```
 
-###Running the Application
+### Running the Application
 Start the application:
 ```bash
 npm start
