@@ -59,7 +59,6 @@ services:
   currency-scheduler:
     container_name: currency-scheduler
     command: yarn dev -L
-
     build:
       context: currency-scheduler
       dockerfile: Dockerfile

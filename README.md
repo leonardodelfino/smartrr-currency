@@ -17,6 +17,27 @@ Here's how the project is deployed:
 
 **Please note that due to cost considerations, the demo will be available until September 30th, 2023.**
 
+## How to Run the Currency Converter Application
+
+### Environment Setup and Start the Application 
+
+1. **Copy Environment Configuration File**: Duplicate the `.env.example` file and rename it to `.env`. This file will contain your configuration settings.
+
+   ```shell
+   cp .env.example .env
+   ```
+
+2. Configure the .env File: Open the .env file in a text editor and set your RapidAPI key as follows:
+    ```dotenv
+    RAPID_API_KEY=your_api_key_here
+    ```
+
+3. Launch the Application: Start the Currency Converter Application using Docker Compose by running the following command in your project directory:
+    ```bash
+    docker-compose up
+    ```
+
+
 ## Architecture Overview
 
 ### Architecture Diagram
