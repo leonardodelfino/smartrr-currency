@@ -1,4 +1,4 @@
-import axios, { AxiosRequestHeaders } from 'axios'; // Import Axios and AxiosRequestConfig
+import axios, { AxiosRequestHeaders } from 'axios'; 
 import config from '../config/env'
 
 

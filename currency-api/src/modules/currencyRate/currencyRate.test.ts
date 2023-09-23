@@ -16,8 +16,8 @@ const accessTokenExpires = moment().add(config.jwt.accessExpirationMinutes, 'min
 
 const admin = {
   _id: new mongoose.Types.ObjectId(),
-  name: 'Admin User', // Use a static name to make tests more predictable
-  email: 'admin@example.com', // Use a static email
+  name: 'Admin User',
+  email: 'admin@example.com',
   password,
   role: 'admin',
   isEmailVerified: true,
