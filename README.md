@@ -32,7 +32,14 @@ Here's how the project is deployed:
     RAPID_API_KEY=your_api_key_here
     ```
 
-3. Launch the Application: Start the Currency Converter Application using Docker Compose by running the following command in your project directory:
+3. You need to install project dependencies using npm. 
+    ```shell
+    npm install --prefix currency-front/
+    npm install --prefix currency-api/
+    npm install --prefix currency-scheduler/
+    ```
+
+4. Launch the Application: Start the Currency Converter Application using Docker Compose by running the following command in your project directory:
     ```bash
     docker-compose up
     ```
