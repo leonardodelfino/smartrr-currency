@@ -73,10 +73,8 @@ Below is a high-level diagram representing the architecture of the Currency Conv
 
 - **currency-api**: The back-end API built with Node.js and TypeScript. It serves as the intermediary between the front-end and the database. This service also is responsible for handling requests from the `currency-scheduler` for data updates. Additionally, a MongoDB database is created within the same Docker environment to store currency conversion data. 
 
-
 - **currency-scheduler**: A Node.js and Typescript application responsible for running scheduled jobs to fetch data from `rapid-api` and comunnicates the `currency-api` to save to database.
 
-Each service has its own README explaining how to run the project.
 
 ### Why Three Services?
 
