@@ -8,7 +8,7 @@ function formatCurrencyTime(currencyTime: Date): string {
   return new Date(currencyTime).toLocaleString('en-US');
 }
 
-export default function LastValue(): JSX.Element {
+export default function LastValue() {
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 

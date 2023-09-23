@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { mainListItems } from './ListItems'; // Import the component you want to test
+import { mainListItems } from './ListItems'; // Import the mainListItems from your component file
 
-test('renders mainListItems', () => {
-  const { getByText } = render(mainListItems);
-  const currencyText = getByText('Currency');
-  expect(currencyText).toBeInTheDocument();
+describe('Main List Items Component', () => {
+  it('renders main list items correctly', () => {
+    const { getByText } = render(mainListItems);
+    expect(getByText('Currency')).toBeDefined();
+  });
 });

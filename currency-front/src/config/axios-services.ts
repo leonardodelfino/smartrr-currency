@@ -11,6 +11,7 @@ const currencyApi = axios.create({
 
 const fetchCurrencyApiAuthToken = async () => {
   const paramsAuthenticate = { email: config.currencyApiUser, password: config.currencyApiPassword };
+  console.log(`-->${config.currencyApiBaseUrl}/auth/login`)
   return axios.post(`${config.currencyApiBaseUrl}/auth/login`, paramsAuthenticate, {
     headers: {
       'Content-Type': 'application/json',
