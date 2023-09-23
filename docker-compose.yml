@@ -1,44 +1,44 @@
 version: '3'
 
 services:
-  mongo:
-    container_name: mongo
-    image: mongo:4.2.1-bionic
-    restart: always
-    ports:
-      - "27018:27017"
-    networks:
-      - backend
-    volumes:
-      - ./data:/data/db
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-    environment:
-      MONGO_INITDB_DATABASE: currency
+  # mongo:
+  #   container_name: mongo
+  #   image: mongo:4.2.1-bionic
+  #   restart: always
+  #   ports:
+  #     - "27018:27017"
+  #   networks:
+  #     - backend
+  #   volumes:
+  #     - ./data:/data/db
+  #     - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+  #   environment:
+  #     MONGO_INITDB_DATABASE: currency
 
-  currency-api:
-    container_name: currency-api
-    build:
-      context: currency-api
-      dockerfile: Dockerfile
-      target: base
-    restart: always
-    env_file: .env
-    expose:
-      - ${API_PORT}
-    ports:
-      - ${API_PORT}:${API_PORT}
-    environment:
-      - MONGODB_URL=mongodb://mongo:27017/currency
-    links:
-      - mongo
-    depends_on:
-      - mongo
-    networks:
-      - backend
-    command: yarn dev -L
-    volumes:
-      - ./currency-api:/usr/src/currency-api
-      - ignore:/usr/local/currency-api/myapp/dev/node_modules/
+  # currency-api:
+  #   container_name: currency-api
+  #   build:
+  #     context: currency-api
+  #     dockerfile: Dockerfile
+  #     target: base
+  #   restart: always
+  #   env_file: .env
+  #   expose:
+  #     - ${API_PORT}
+  #   ports:
+  #     - ${API_PORT}:${API_PORT}
+  #   environment:
+  #     - MONGODB_URL=mongodb://mongo:27017/currency
+  #   links:
+  #     - mongo
+  #   depends_on:
+  #     - mongo
+  #   networks:
+  #     - backend
+  #   command: yarn dev -L
+  #   volumes:
+  #     - ./currency-api:/usr/src/currency-api
+  #     - ignore:/usr/local/currency-api/myapp/dev/node_modules/
 
   currency-front:
       container_name: currency-front
@@ -46,8 +46,6 @@ services:
         dockerfile: Dockerfile
         context: currency-front
       env_file: .env
-      depends_on:
-        - currency-api
       volumes:
         - ./currency-front:/usr/src/currency-front
       ports:
@@ -56,26 +54,26 @@ services:
       networks:
         - backend
 
-  currency-scheduler:
-    container_name: currency-scheduler
-    command: yarn dev -L
-    build:
-      context: currency-scheduler
-      dockerfile: Dockerfile
-      target: base
-    restart: always
-    env_file: .env
-    depends_on:
-        - currency-api
-    expose:
-      - ${SCHEDULER_PORT}
-    ports:
-      - ${SCHEDULER_PORT}:${SCHEDULER_PORT}
-    networks:
-      - backend
-    volumes:
-      - ./currency-scheduler:/usr/src/currency-scheduler
-      - ignore:/usr/currency-scheduler/apps/myapp/dev/node_modules/
+  # currency-scheduler:
+  #   container_name: currency-scheduler
+  #   command: yarn dev -L
+  #   build:
+  #     context: currency-scheduler
+  #     dockerfile: Dockerfile
+  #     target: base
+  #   restart: always
+  #   env_file: .env
+  #   depends_on:
+  #       - currency-api
+  #   expose:
+  #     - ${SCHEDULER_PORT}
+  #   ports:
+  #     - ${SCHEDULER_PORT}:${SCHEDULER_PORT}
+  #   networks:
+  #     - backend
+  #   volumes:
+  #     - ./currency-scheduler:/usr/src/currency-scheduler
+  #     - ignore:/usr/currency-scheduler/apps/myapp/dev/node_modules/
 
 volumes:
   mongo-data:

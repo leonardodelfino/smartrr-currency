@@ -28,7 +28,7 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.ts",
     "prettier:fix": "prettier --write **/*.ts",
-    "prepare": "husky install",
+    "prepare": "",
     "release": "standard-version && git push --follow-tags origin master"
   },
   "keywords": [
